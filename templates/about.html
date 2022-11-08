@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | About Us {% endblock %}
+
+{% block content %}
+    {% for realtor in object_list %}
+  <!-- Breadcrumb -->
+<section id="bc" class="mt-3">
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+          <i class="fas fa-home"></i> Home</a>
+      </li>
+      <li class="breadcrumb-item active"> About</li>
+    </ol>
+  </nav>
+</div>
+</section>
+
+<section>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+            <h1 class="display-4"><i>About Realtor</i></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="about" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+        <span class="font-weight-bold" style="font-size: 30px">Name: {{ realtor.name }}</span><br>
+        <span class="font-weight-bold" style="font-size: 20px">Phone: {{ realtor.phone }}</span><br>
+        <span class="font-weight-bold" style="font-size: 20px">Email: {{ realtor.email }}</span><br>
+        <span class="font-weight-bold" style="font-size: 20px">Address: {{ realtor.address }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="bg-dark text-white text-center">
+    <h2 class="display-4">Find Your Home</h2>
+    <h4 style="font-size: 15px">Madison Vance obtained her real estate license and started working for a respectable brokerage in the Omaha region. Madison performed admirably in this position, but she ultimately wanted to go it alone, so she also got her broker's license. She now runs Advance Home Real Estate as its owner and operator.</h4>
+    <hr>
+  </section>
+
+  {% endfor %}
+
+{% endblock %}
