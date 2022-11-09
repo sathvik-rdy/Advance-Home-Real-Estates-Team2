@@ -1,0 +1,1 @@
+web: gunicorn advance_home_realestate_team2.wsgi
