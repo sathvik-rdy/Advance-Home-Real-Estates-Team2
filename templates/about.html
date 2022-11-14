@@ -7,24 +7,63 @@
 {% block content %}
     {% for realtor in object_list %}
   <!-- Breadcrumb -->
-<section id="bc" class="mt-3">
-<div class="container">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-          <i class="fas fa-home"></i> Home</a>
-      </li>
-      <li class="breadcrumb-item active"> About</li>
-    </ol>
-  </nav>
-</div>
-</section>
+<section id="bc" class="mt-3" xmlns=http://www.w3.org/1999/html>
+    <div class="container"></div>
+    <!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+</style>
+<body>
+
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#"><i class="fa fa-fw fa-search"></i>About</a>
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
+    <a href="#"><i class="fa fa-fw fa-home"></i> Listings</a>
+    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href="#"><i class="fa fa-sign-out"></i> Search</a>
+
+  </div>
+    </div>
+
+</body>
+</html>
+
+</body>
+</section>
 <section>
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-            <h1 class="display-4"><i>About Realtor</i></h1>
+            <h1 class="display-4"><i>Madison, Welcome's you to Advance Home Real Estate</i></h1>
         </div>
       </div>
     </div>
@@ -34,7 +73,7 @@
       <div class="row">
         <div class="col-md-8">
         <span class="font-weight-bold" style="font-size: 30px">Name: {{ realtor.name }}</span><br>
-        <span class="font-weight-bold" style="font-size: 20px">Phone: {{ realtor.phone }}</span><br>
+        <span class="font-weight-bold" style="font-size: 20px">Phone number: {{ realtor.phone }}</span><br>
         <span class="font-weight-bold" style="font-size: 20px">Email: {{ realtor.email }}</span><br>
         <span class="font-weight-bold" style="font-size: 20px">Address: {{ realtor.address }}</span>
         </div>
