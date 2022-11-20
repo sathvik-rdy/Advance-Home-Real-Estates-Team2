@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 15px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+</style>
+</head>
+<body>
+
+
+<h3 style="text-align:left">Know your Realtor</h3>
+<p>Not long after obtaining her undergraduate degree in Business Administration, Madison Vance got her
+Real Estate License and became a real estate agent with a well-respected Omaha area brokerage. While
+she did quite well in this role, Madison wanted to strike out on her own and obtained her Broker’s
+    License as well. She is now the owner and operator of <b>Advance Home Real Estate</b>. </p>
+<div class="row">
+<div class="column">
+    <div class="card">
+      <div class="container">
+        <h3>Madison Vance</h3>
+          <img src="https://www.texasrealestate.com/wp-content/uploads/user-profiles/435000/435418.jpg" width="250" height="350"><br>
+          <span class="" style="font-size: 15px"><b>Office Address:</b> 7410 N 73rd Cir, Omaha, NE 68122</span><br>
+          <span class="" style="font-size: 15px"><b>Call:</b> (402) 896-3100</span><br>
+          <span class="" style="font-size: 15px"><b>More Info:</b> <a href="https://team2advancehomerealestates.herokuapp.com/" >Website </a></span><br>
+          <span class="" style="font-size: 15px"><b>Email:</b>adavancehomerealestate@omaha.com</span><br>
+          <p></p>
+      </div>
+    </div>
+</div>
+
+ <div class="column">
+    <div class="card">
+        <div class="container">
+            <h3>Request Information</h3>
+            <label for="fname">First name:</label>
+            <br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <label for="fname">Last name:</label>
+            <br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <label for="lname">Mobile:</label>
+            <br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <label for="lname">Email:</label>
+            <br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+           <label for="lname">Address:</label>
+            <br>
+            <input type="text" id="fname" name="fname" style="height:40px; width:400px;value=""><br>
+            <label for="lname">Request details:</label>
+            <br>
+            <input type="text" id="lname" name="lname" style="height:40px; width:400px;"value=""><br>
+            <br>
+            <input type="submit" value="Submit">
+            <p></p>
+    </div>
+    </div>
+
+</html>
+{% endblock %}
