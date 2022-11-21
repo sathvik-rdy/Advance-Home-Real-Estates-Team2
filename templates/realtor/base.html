@@ -12,7 +12,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="{% url 'home' %}">Advance Home Real Estate</a>
+     <!-- <a class="navbar-brand" href="{% url 'realtor-home' %}">Advance Home Real Estate</a> -->
+      <a  href="{% url 'realtor-home' %}"><i class="fa fa-5x fa-buysellads"></i> </a>
     <!--  <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -72,14 +73,12 @@ font-family: Arial, Helvetica, sans-serif;
 
 
 <div class="navbar">
-  <a  href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-  <a  href="#"><i class="fa fa-fw fa-info"></i> About</a>
-  <a  href="#"><i class="fa fa-fw fa-envelope"></i> Contact Us</a>
-  <a  href="#"><i class="fa fa-fw fa-picture-o"></i> Listings</a>
-  <a  href="#"><i class="fa fa-fw fa-globe"></i> Events</a>
-  <a  href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-  <a  href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-
+  <a  href="{% url 'realtor-home' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a  href="{% url 'realtor-listings' %}"><i class="fa fa-fw fa-picture-o"></i> Listings</a>
+  <a  href="{% url 'realtor-events' %}"><i class="fa fa-fw fa-globe"></i> Events</a>
+  <a  href="{% url 'realtor-login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a  href="{% url 'realtor-search' %}"><i class="fa fa-fw fa-search"></i> Search</a>
+  <a  href="{% url 'realtor-about' %}"><i class="fa fa-fw fa-info"></i> About</a>
   </div>
     </div>
 
