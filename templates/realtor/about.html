@@ -37,8 +37,6 @@ html {
 </style>
 </head>
 <body>
-
-
 <h3 style="text-align:left">Know your Realtor</h3>
 <p>Not long after obtaining her undergraduate degree in Business Administration, Madison Vance got her
 Real Estate License and became a real estate agent with a well-respected Omaha area brokerage. While
@@ -48,11 +46,21 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
 <div class="column">
     <div class="card">
       <div class="container">
-        <h3>Madison Vance</h3>
-          <img src="https://www.texasrealestate.com/wp-content/uploads/user-profiles/435000/435418.jpg" width="250" height="350"><br>
-          <span class="" style="font-size: 15px"><b>Office Address:</b> 7410 N 73rd Cir, Omaha, NE 68122</span><br>
-          <span class="" style="font-size: 15px"><b>Call:</b> (402) 896-3100</span><br>
-          <span class="" style="font-size: 15px"><b>Email:</b>adavancehomerealestate@omaha.com</span><br>
+          {% if user.is_authenticated %}
+          <h3>{{ user.profile.firstName }} {{user.profile.lastName }}</h3>
+          <img src="{{ user.profile.image.url }}" width="250" height="350"><br>
+          <span class="" style="font-size: 15px"><b>Office Address:</b> {{ user.profile.address }}</span><br>
+          <span class="" style="font-size: 15px"><b>Call:</b> {{ user.profile.phoneNumber }}</span><br>
+          <span class="" style="font-size: 15px"><b>Email:</b>{{ user.email }}</span><br>
+          {% else %}
+          {% for Profile in object_list %}
+          <h3>{{ Profile.firstName }} {{ Profile.lastName }}</h3>
+          <img src="{{ Profile.image.url }}" width="250" height="350"><br>
+          <span class="" style="font-size: 15px"><b>Office Address:</b> {{ Profile.address }}</span><br>
+          <span class="" style="font-size: 15px"><b>Call:</b> {{ Profile.phoneNumber }}</span><br>
+          <span class="" style="font-size: 15px"><b>Email:</b>{{ Profile.officeEmail }}</span><br>
+          {% endfor %}
+          {% endif %}
           <p></p>
       </div>
     </div>
