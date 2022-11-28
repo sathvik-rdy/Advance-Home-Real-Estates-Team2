@@ -10,7 +10,7 @@ class Profile(models.Model):
     firstName = models.CharField(max_length = 25, null = True)
     lastName  = models.CharField(max_length = 25, null = True)
     image = models.ImageField(default='default.jpg',upload_to='profile_pics')
-    phoneNumber = PhoneNumberField(unique=True, null=True, blank=False)
+    phoneNumber = models.CharField(max_length=13, null=True)
     address = models.TextField(max_length = 200, null = True)
     officeEmail = models.EmailField(max_length = 50,null = True)
 
