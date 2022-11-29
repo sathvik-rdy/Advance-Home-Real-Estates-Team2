@@ -19,6 +19,8 @@
                             <span class="" style="font-size: 15px"><b>Neighborhood:</b>{{ property.propertyNeighborhood }}</span><br>
                             <span class="" style="font-size: 15px"><b>ZipCode:</b>{{ property.propertyZipCode }}</span><br>
                             <span class="" style="font-size: 15px"><b>Price:</b>{{ property.propertyPrice }}</span><br>
+                            <a  href="{% url 'realtor-update-property' property.id %}">update</a>
+                            <a  href="{% url 'realtor-delete-property' property.id %}">delete</a>
                         </div>
 
                     </div>

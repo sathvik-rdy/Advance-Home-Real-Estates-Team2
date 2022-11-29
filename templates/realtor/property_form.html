@@ -1,0 +1,45 @@
+{% extends "realtor/base.html" %}
+{% load static %}
+{% block content %}
+<!--<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="fw-bold">Add/update Listings</h2>
+                    </div>
+                    <div class="card-body">
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+     <fieldset class="form-group">
+  {{form.as_p}}
+     </fieldset>
+  <div class="form-group">
+    <button class="btn btn-outline-info" type="submit">Save</button>
+  </div>
+
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+
+        {{ form }} <br />
+
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form }}
+    {% endfor %}
+ <div class="form-group">
+    <button class="btn btn-outline-info" type="submit">Save</button>
+  </div>
+</form>
+{% endblock %}

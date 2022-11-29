@@ -10,3 +10,4 @@ class realtorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(realtor, realtorAdmin)
+admin.site.register(Listing)
