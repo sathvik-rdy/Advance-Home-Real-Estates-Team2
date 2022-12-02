@@ -66,10 +66,11 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
     </div>
 </div>
 
- <div class="column">
+ <bo class="column">
     <div class="card">
         <div class="container">
             <h3>Request Information</h3>
+            <form action="{% url 'customer-request-submission' %}">
             <label for="fname">First name:</label>
             <br>
             <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
@@ -91,8 +92,9 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
             <br>
             <input type="submit" value="Submit">
             <p></p>
+            </form>
     </div>
     </div>
-
+</body>
 </html>
 {% endblock %}

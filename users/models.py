@@ -11,7 +11,7 @@ class Profile(models.Model):
     Last_Name  = models.CharField(max_length = 25, null = True)
     image = models.ImageField(default='default.jpg',upload_to='profile_pics')
     Phone_Number = models.CharField(max_length=13, null=True)
-    address = models.TextField(max_length = 100, null = True)
+    address = models.CharField(max_length = 50, null = True)
     Office_Email = models.EmailField(max_length = 50,null = True)
 
     def __str__(self):
