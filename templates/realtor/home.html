@@ -75,15 +75,15 @@ html {
                 <span class="font-weight-bold" style="font-size: 20px">Contact Us</span><br>
                 {% if user.is_authenticated %}
                 <span class="" style="font-size: 15px">Office Address: {{ user.profile.address }}</span><br>
-                <span class="" style="font-size: 15px">Call : {{ user.profile.phoneNumber }}</span><br>
+                <span class="" style="font-size: 15px">Call : {{ user.profile.Phone_Number }}</span><br>
                 <span class="" style="font-size: 15px">Email : {{ user.email }}</span><br>
                 <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" width="450" height="260">
               <p></p>
                 {% else %}
                 {% for Profile in object_list %}
                  <span class="" style="font-size: 15px">Office Address: {{ Profile.address }}</span><br>
-                <span class="" style="font-size: 15px">Call : {{ Profile.phoneNumber }}</span><br>
-                <span class="" style="font-size: 15px">Email : {{ Profile.officeEmail }}</span><br>
+                <span class="" style="font-size: 15px">Call : {{ Profile.Phone_Number }}</span><br>
+                <span class="" style="font-size: 15px">Email : {{ Profile.Office_Email }}</span><br>
                 <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" width="450" height="260">
                 {% endfor %}
                 {% endif %}

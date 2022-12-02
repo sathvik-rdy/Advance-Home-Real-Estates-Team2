@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'realtor',
-    'phonenumber_field',
     'users.apps.UsersConfig',
 ]
 

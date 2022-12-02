@@ -47,18 +47,18 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
     <div class="card">
       <div class="container">
           {% if user.is_authenticated %}
-          <h3>{{ user.profile.firstName }} {{user.profile.lastName }}</h3>
+          <h3>{{ user.profile.First_Name }} {{user.profile.Last_Name }}</h3>
           <img src="{{ user.profile.image.url }}" width="250" height="350"><br>
           <span class="" style="font-size: 15px"><b>Office Address:</b> {{ user.profile.address }}</span><br>
-          <span class="" style="font-size: 15px"><b>Call:</b> {{ user.profile.phoneNumber }}</span><br>
+          <span class="" style="font-size: 15px"><b>Call:</b> {{ user.profile.Phone_Number }}</span><br>
           <span class="" style="font-size: 15px"><b>Email:</b>{{ user.email }}</span><br>
           {% else %}
           {% for Profile in object_list %}
-          <h3>{{ Profile.firstName }} {{ Profile.lastName }}</h3>
+          <h3>{{ Profile.First_Name }} {{ Profile.Last_Name }}</h3>
           <img src="{{ Profile.image.url }}" width="250" height="350"><br>
           <span class="" style="font-size: 15px"><b>Office Address:</b> {{ Profile.address }}</span><br>
-          <span class="" style="font-size: 15px"><b>Call:</b> {{ Profile.phoneNumber }}</span><br>
-          <span class="" style="font-size: 15px"><b>Email:</b>{{ Profile.officeEmail }}</span><br>
+          <span class="" style="font-size: 15px"><b>Call:</b> {{ Profile.Phone_Number }}</span><br>
+          <span class="" style="font-size: 15px"><b>Email:</b>{{ Profile.Office_Email }}</span><br>
           {% endfor %}
           {% endif %}
           <p></p>

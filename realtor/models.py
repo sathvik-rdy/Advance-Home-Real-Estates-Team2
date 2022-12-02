@@ -13,6 +13,7 @@ class realtor(models.Model):
     def __str__(self):
         return self.name
 
+
 class Listing(models.Model):
     propertyName = models.CharField(max_length=50, null=True)
     propertyDescription = models.TextField(max_length=100, null=True)

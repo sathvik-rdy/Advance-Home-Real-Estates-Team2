@@ -1,18 +1,18 @@
 from PIL import Image
 from django.db import models
 from django.contrib.auth.models import User
-#from phonenumber_field.modelfields import PhoneNumberField
+
 # Create your models here.
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
-    firstName = models.CharField(max_length = 25, null = True)
-    lastName  = models.CharField(max_length = 25, null = True)
+    First_Name = models.CharField(max_length = 25, null = True)
+    Last_Name  = models.CharField(max_length = 25, null = True)
     image = models.ImageField(default='default.jpg',upload_to='profile_pics')
-    phoneNumber = models.CharField(max_length=13, null=True)
-    address = models.TextField(max_length = 200, null = True)
-    officeEmail = models.EmailField(max_length = 50,null = True)
+    Phone_Number = models.CharField(max_length=13, null=True)
+    address = models.TextField(max_length = 100, null = True)
+    Office_Email = models.EmailField(max_length = 50,null = True)
 
     def __str__(self):
         return f'{self.user.username} Profile'

@@ -13,5 +13,7 @@ urlpatterns = [
     path('createListing/', views.createListing, name='realtor-createListing'),
    # path('create_property/', views.createProperty, name='realtor-create_property'),
     path('update_property/<str:pk>/', views.updateProperty, name='realtor-update-property'),
-    path('delete_property/<str:pk>/', views.deleteProperty, name='realtor-delete-property')
+    path('delete_property/<str:pk>/', views.deleteProperty, name='realtor-delete-property'),
+    path('Request_Form/', views.requestForm, name='realtor-request-information'),
+    path('Request_Submited_Success/', views.requestSubmitForm, name='customer-request-submission')
 ]

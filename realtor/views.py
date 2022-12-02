@@ -38,8 +38,7 @@ def createListing(request):
         prod.propertyDescription = request.POST.get('Description')
         prod.propertyNeighborhood = request.POST.get('Neighborhood')
         prod.propertyZipCode = request.POST.get('ZipCode')
-        prod.propertyPrice = request.POST.get('propertyPrice')
-
+        prod.propertyPrice = request.POST.get('Price')
         if len(request.FILES) != 0:
             prod.propertyImage = request.FILES['propertyImage']
         prod.save()
@@ -116,3 +115,9 @@ def deleteProperty(request, pk):
         return redirect('/realtorlistings/')
     context = {'item':property}
     return render(request, 'realtor/delete_property.html', context)
+
+def requestForm(request):
+    return render(request, 'realtor/Request_Form.html')
+
+def requestSubmitForm(request):
+    return render(request, 'realtor/Request_Submited_Success.html')

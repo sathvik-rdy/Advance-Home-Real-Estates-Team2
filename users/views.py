@@ -31,7 +31,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your profile has been updated!!!')
-            return redirect('profile')
+            return redirect('realtor-home')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
