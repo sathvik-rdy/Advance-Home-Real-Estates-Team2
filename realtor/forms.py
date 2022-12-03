@@ -1,14 +1,14 @@
 from django.forms import ModelForm
 from django import forms
+from django.forms import TextInput
 from .models import Listing
 #Images
 
 class CreateListForm(ModelForm):
     class Meta:
         model = Listing
-        fields = '__all__'
-#        fields = ['propertyName', 'propertyDescription', 'propertyNeighborhood', 'propertyZipCode', 'propertyPrice']
-
+#        fields = '__all__'
+        fields = ['propertyName', 'propertyDescription', 'propertyNeighborhood', 'propertyZipCode', 'propertyPrice','propertyImage']
 #class ImageForm(ModelForm):
 #    image = forms.ImageField(label='Image')
 #    class Meta:

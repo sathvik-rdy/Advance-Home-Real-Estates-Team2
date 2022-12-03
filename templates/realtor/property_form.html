@@ -1,45 +1,86 @@
 {% extends "realtor/base.html" %}
 {% load static %}
+{%load crispy_forms_tags %}
 {% block content %}
-<!--<section class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="fw-bold">Add/update Listings</h2>
-                    </div>
-                    <div class="card-body">
-<form action="" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-     <fieldset class="form-group">
-  {{form.as_p}}
-     </fieldset>
-  <div class="form-group">
-    <button class="btn btn-outline-info" type="submit">Save</button>
-  </div>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 15px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+.container {
+  padding: 0 16px;
+}
+.buttons {
+width: 100px;
+margin: 0 auto;
+display: inline;}
+
+    .action_btn {
+width: 100px;
+margin: 0 auto;
+display: inline;}
+</style>
+</head>
+<body>
+    <div class="row">
+             <div class="column">
+            <div class="card">
+                <div class="container">
+      <div class="media">
+        <img class="mr-5" src="{{ item.propertyImage.url }}">
+      </div>
+                </div>
+            </div>
+             </div>
+                <div class="column">
+            <div class="card">
+                <div class="container">
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <fieldset class="form-group">
+    <legend class="border-bottom mb-4">Update Listing Information </legend>
+        {{ form|crispy }}
+        </fieldset>
+    <div class="buttons">
+
+            <div class="action_btn">
+
+            <button name="submit" class="action_btn submit" type="submit" value="Save" >Save</button>
+            <button name="submit" class="action_btn cancel" type="submit" value="Cancel" >Cancel</button>
+
+            <p id="saved"></p>
+
+            </div>
+
+        </div>
 </form>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section> -->
-<form action="" method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-    {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-    {% endfor %}
-
-        {{ form }} <br />
-
-    {{ formset.management_form }}
-    {% for form in formset %}
-        {{ form }}
-    {% endfor %}
- <div class="form-group">
-    <button class="btn btn-outline-info" type="submit">Save</button>
-  </div>
-</form>
+</body>
+</html>
 {% endblock %}

@@ -98,6 +98,7 @@ def search(request):
 
 def updateProperty(request, pk):
 
+    item = Listing.objects.all()
     property = Listing.objects.get(id=pk)
     form = CreateListForm(instance=property)
     if request.method == 'POST':
@@ -105,7 +106,7 @@ def updateProperty(request, pk):
         if form.is_valid():
             form.save()
             return redirect('/')
-    context = {'form':form}
+    context = {'form':form, 'item':property}
     return render(request, 'realtor/property_form.html', context)
 
 def deleteProperty(request, pk):

@@ -1,7 +1,17 @@
 {% extends "realtor/base.html" %}
 {% load static %}
 {% block content %}
+<style>
+    .buttons {
+width: 100px;
+margin: 0 auto;
+display: inline;}
 
+    .action_btn {
+width: 100px;
+margin: 0 auto;
+display: inline;}
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -19,9 +29,28 @@
                             <span class="" style="font-size: 15px"><b>Neighborhood:</b>{{ property.propertyNeighborhood }}</span><br>
                             <span class="" style="font-size: 15px"><b>ZipCode:</b>{{ property.propertyZipCode }}</span><br>
                             <span class="" style="font-size: 15px"><b>Price:</b>{{ property.propertyPrice }}</span><br>
-                            <a  href="{% url 'realtor-update-property' property.id %}">update</a>
-                            <a  href="{% url 'realtor-delete-property' property.id %}">delete</a>
                         </div>
+                        <div class="buttons">
+
+            <div class="action_btn">
+<button id="updateButton" class="action_btn submit" >update</button>
+
+<script type="text/javascript">
+    document.getElementById("updateButton").onclick = function () {
+        location.href = "{% url 'realtor-update-property' property.id %}";
+    };
+</script>
+                <button id="deleteButton" class="action_btn delete" >delete</button>
+
+<script type="text/javascript">
+    document.getElementById("deleteButton").onclick = function () {
+        location.href = "{% url 'realtor-delete-property' property.id %}";
+    };
+</script>
+            </div>
+                        </div>
+
+        </div>
 
                     </div>
                 </div>
