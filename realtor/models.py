@@ -20,8 +20,9 @@ class Listing(models.Model):
     propertyNeighborhood = models.CharField(max_length=50, null=True)
     propertyZipCode = models.CharField(max_length=10, null=True)
     propertyPrice = models.CharField(max_length=10, null=True)
+    featuredProperty = models.BooleanField(default=False)
     propertyImage = models.ImageField(default='default.jpg', upload_to='listings_pics')
-
+    #propertyImage = models.FileField()
     def __str__(self):
         return self.propertyName
 

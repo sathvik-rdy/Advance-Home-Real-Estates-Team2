@@ -80,7 +80,7 @@ html {
                 <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" width="450" height="260">
               <p></p>
                 {% else %}
-                {% for Profile in object_list %}
+                {% for Profile in profile %}
                  <span class="" style="font-size: 15px">Office Address: {{ Profile.address }}</span><br>
                 <span class="" style="font-size: 15px">Call : {{ Profile.Phone_Number }}</span><br>
                 <span class="" style="font-size: 15px">Email : {{ Profile.Office_Email }}</span><br>
@@ -97,11 +97,18 @@ html {
         <div class="column">
          <div class="card" >
 		    <div class="container" >
+                {% for list in listing %}
         	<span class="font-weight-bold" style="font-size: 20px">Featured Property</span><br>
-            <span class="" style="font-size: 15px">Address: 11206 Reynolds St</span><br>
+            <span class="" style="font-size: 15px">Address: {{ list.propertyName }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ list.propertyPrice }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ list.propertyDescription }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ list.propertyNeighborhood }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ list.propertyZipCode }}</span><br>
             <span class="" style="font-size: 15px">Open Hours: Models open Monday 12pm-6pm</span><br>
-                <span class="" style="font-size: 15px">More Details : <a href="https://www.zillow.com/homedetails/108-N-52nd-St-Omaha-NE-68132/75858039_zpid/"> View property details </span><br>
-            <img img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://photos.zillowstatic.com/fp/0ef4b2c72d0971e825f8b0f0ff05d859-cc_ft_960.jpg" alt="" width="450" height="260">
+             <div class="listing-image">
+                                <img src="{{ list.propertyImage.url }}" alt="property image" class="w-100" />
+                            </div>
+                {% endfor %}
           <p></p>
         </div>
         </div>

@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    path('', views.homeListView.as_view(), name='realtor-home'),
+    path('', views.homefeaturedProperty, name='realtor-home'),
+   #path('', views.homeListView.as_view(), name='realtor-home'),
     path('about/', views.aboutListView.as_view(), name='realtor-about'),
     path('listings/', views.listings, name='listings'),
     path('realtorlistings/', views.realtorlistings, name='realtor-listings'),

@@ -11,9 +11,11 @@ from users.models import *
 
 
 # Create your views here.
-class homeListView(ListView):
-    model = Profile
-    template_name = 'realtor/home.html'
+def homefeaturedProperty(request):
+    profile = Profile.objects.all()
+    listing = Listing.objects.filter(featuredProperty='True').values()
+    context = {'listing': listing,'profile': profile}
+    return render(request,'realtor/home.html',context)
 
 #def about(request):
 #    return render(request,'realtor/about.html',{'title':'about'})
@@ -39,6 +41,12 @@ def createListing(request):
         prod.propertyNeighborhood = request.POST.get('Neighborhood')
         prod.propertyZipCode = request.POST.get('ZipCode')
         prod.propertyPrice = request.POST.get('Price')
+        value = request.POST.get('featured')
+        if value == 'on':
+            value = True
+        else:
+            value = False
+        prod.featuredProperty = value
         if len(request.FILES) != 0:
             prod.propertyImage = request.FILES['propertyImage']
         prod.save()

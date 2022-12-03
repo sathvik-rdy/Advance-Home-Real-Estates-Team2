@@ -8,7 +8,7 @@ class CreateListForm(ModelForm):
     class Meta:
         model = Listing
 #        fields = '__all__'
-        fields = ['propertyName', 'propertyDescription', 'propertyNeighborhood', 'propertyZipCode', 'propertyPrice','propertyImage']
+        fields = ['propertyName', 'propertyDescription', 'propertyNeighborhood', 'propertyZipCode', 'propertyPrice', 'featuredProperty', 'propertyImage']
 #class ImageForm(ModelForm):
 #    image = forms.ImageField(label='Image')
 #    class Meta:
