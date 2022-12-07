@@ -55,7 +55,7 @@ html {
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-            <h1 class="display-4">Welcome to Advance Home Real Estate - Updated!!!!!</h1>
+            <h1 class="display-4">Welcome to Advance Home Real Estate</h1>
             <h4 style="font-size: 15px">With the limited number of homes on the current U.S. market, you need an agent with the right connections, technology and strategies to achieve your home buying or selling vision. Whether you're feeling overwhelmed and want someone to take the wheel, or you just need a second opinion and you have it covered, you can be rest assured our agent is the right agent for any level of service, in any market condition.</h4>
         </div>
       </div>
@@ -80,10 +80,10 @@ html {
                 <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" width="450" height="260">
               <p></p>
                 {% else %}
-                {% for Profile in profile %}
-                 <span class="" style="font-size: 15px">Office Address: {{ Profile.address }}</span><br>
-                <span class="" style="font-size: 15px">Call : {{ Profile.Phone_Number }}</span><br>
-                <span class="" style="font-size: 15px">Email : {{ Profile.Office_Email }}</span><br>
+                {% for pro in profile %}
+                 <span class="" style="font-size: 15px">Office Address: {{ pro.address }}</span><br>
+                <span class="" style="font-size: 15px">Call : {{ pro.Phone_Number }}</span><br>
+                <span class="" style="font-size: 15px">Email : {{ pro.Office_Email }}</span><br>
                 <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://3.bp.blogspot.com/-mbBCr-PLf3s/Wj4y1LqF2AI/AAAAAAAAAuY/yVHqruI3cS43oKtVwdLq2s8oHIp5PDD_gCPcBGAYYCw/s1600/Archkala%2B-%2BReal%2BEstate%2BOffice004.jpg" width="450" height="260">
                 {% endfor %}
                 {% endif %}
