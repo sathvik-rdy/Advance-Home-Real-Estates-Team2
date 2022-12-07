@@ -55,7 +55,7 @@ html {
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-            <h1 class="display-4">Welcome to Advance Home Real Estate</h1>
+            <h1 class="display-4">Welcome to Advance Home Real Estate - Updated!!!!!</h1>
             <h4 style="font-size: 15px">With the limited number of homes on the current U.S. market, you need an agent with the right connections, technology and strategies to achieve your home buying or selling vision. Whether you're feeling overwhelmed and want someone to take the wheel, or you just need a second opinion and you have it covered, you can be rest assured our agent is the right agent for any level of service, in any market condition.</h4>
         </div>
       </div>
@@ -97,17 +97,17 @@ html {
         <div class="column">
          <div class="card" >
 		    <div class="container" >
-                {% for list in listing %}
+                {% for item in listing %}
         	<span class="font-weight-bold" style="font-size: 20px">Featured Property</span><br>
-            <span class="" style="font-size: 15px">Address: {{ list.propertyName }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ list.propertyPrice }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ list.propertyDescription }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ list.propertyNeighborhood }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ list.propertyZipCode }}</span><br>
+            <span class="" style="font-size: 15px">Address: {{ item.propertyName }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ item.propertyPrice }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ item.propertyDescription }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ item.propertyNeighborhood }}</span><br>
+                <span class="" style="font-size: 15px">Address: {{ item.propertyZipCode }}</span><br>
             <span class="" style="font-size: 15px">Open Hours: Models open Monday 12pm-6pm</span><br>
              <div class="listing-image">
-                                <img src="{{ list.propertyImage.url }}" alt="property image" class="w-100" />
-                            </div>
+                 <img src="{{ item.propertyImage.url }}" alt="property image" class="w-100" />
+             </div>
                 {% endfor %}
           <p></p>
         </div>
