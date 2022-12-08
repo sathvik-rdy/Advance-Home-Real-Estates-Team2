@@ -97,17 +97,18 @@ html {
         <div class="column">
          <div class="card" >
 		    <div class="container" >
-                {% for item in listing %}
-        	<span class="font-weight-bold" style="font-size: 20px">Featured Property</span><br>
-            <span class="" style="font-size: 15px">Address: {{ item.propertyName }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ item.propertyPrice }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ item.propertyDescription }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ item.propertyNeighborhood }}</span><br>
-                <span class="" style="font-size: 15px">Address: {{ item.propertyZipCode }}</span><br>
-            <span class="" style="font-size: 15px">Open Hours: Models open Monday 12pm-6pm</span><br>
-             <div class="listing-image">
-                 <img src="{{ item.propertyImage.url }}" alt="property image" class="w-100" />
-             </div>
+                {% for item in items %}
+        	    <span class="font-weight-bold" style="font-size: 20px">Featured Property</span><br>
+                <div class="items-image">
+                    <img src="{{ item.propertyImage.url }}" alt="item image" class="w-100" />
+                </div>
+                <span class="" style="font-size: 15px"> Name : {{ item.propertyName }}</span><br>
+                <span class="" style="font-size: 15px"> Description : {{ item.propertyDescription }}</span><br>
+                <span class="" style="font-size: 15px"> Address : {{ item.propertyAddress }}</span><br>
+                <span class="" style="font-size: 15px"> Type : {{ item.propertyType }}</span><br>
+                <span class="" style="font-size: 15px"> Neighborhood : {{ item.propertyNeighborhood }}</span><br>
+                <span class="" style="font-size: 15px"> ZipCode : {{ item.propertyZipCode }}</span><br>
+                <span class="" style="font-size: 15px"> Status : {{ item.propertyStatus }}</span><br>
                 {% endfor %}
           <p></p>
         </div>

@@ -26,9 +26,12 @@ display: inline;}
                             </div>
                             <span class="" style="font-size: 15px"><b>Name:</b> {{ property.propertyName }}</span><br>
                             <span class="" style="font-size: 15px"><b>Description:</b> {{ property.propertyDescription }}</span><br>
+                            <span class="" style="font-size: 15px"><b>Property Address:</b>{{ property.propertyAddress }}</span><br>
+                            <span class="" style="font-size: 15px"><b>Property Type:</b>{{ property.propertyType }}</span><br>
                             <span class="" style="font-size: 15px"><b>Neighborhood:</b>{{ property.propertyNeighborhood }}</span><br>
                             <span class="" style="font-size: 15px"><b>ZipCode:</b>{{ property.propertyZipCode }}</span><br>
-                                <span class="" style="font-size: 15px"><b>Price:</b>{{ property.propertyPrice }}</span><br>
+                            <span class="" style="font-size: 15px"><b>Price:</b>{{ property.propertyPrice }}</span><br>
+                            <span class="" style="font-size: 15px"><b>Status:</b>{{ property.propertyStatus }}</span><br>
                             <span class="" style="font-size: 15px"><b>FeaturedProperty:</b>{{ property.featuredProperty }}</span><br>
                             <a href="{% url 'realtor-update-property' property.id %}">Update</a>
                             <a href="{% url 'realtor-delete-property' property.id %}">Delete</a>

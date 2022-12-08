@@ -13,8 +13,8 @@ from users.models import *
 # Create your views here.
 def homefeaturedProperty(request):
     profile = Profile.objects.all()
-    listing = Listing.objects.filter(featuredProperty='True').values()
-    context = {'listing': listing,'profile': profile}
+    items = Listing.objects.filter(featuredProperty='True').values()
+    context = {'items': items,'profile': profile}
     return render(request,'realtor/home.html',context)
 
 #def about(request):
@@ -38,9 +38,12 @@ def createListing(request):
         prod = Listing()
         prod.propertyName = request.POST.get('Name')
         prod.propertyDescription = request.POST.get('Description')
+        prod.propertyAddress = request.POST.get('Address')
+        prod.propertyType = request.POST.get('type')
         prod.propertyNeighborhood = request.POST.get('Neighborhood')
         prod.propertyZipCode = request.POST.get('ZipCode')
         prod.propertyPrice = request.POST.get('Price')
+        prod.propertyStatus = request.POST.get('Status')
         value = request.POST.get('featured')
         if value == 'on':
             value = True
@@ -130,3 +133,40 @@ def requestForm(request):
 
 def requestSubmitForm(request):
     return render(request, 'realtor/Request_Submited_Success.html')
+
+
+class PropertyTypeSearchView(ListView):
+    model = Listing
+    template_name='realtor/search.html'
+    context_object_name = 'items'
+
+    def get_queryset(self):
+        query = self.request.GET.get('type')
+        return Listing.objects.filter(propertyType=query)
+
+class PropertyNeighborhoodSearchView(ListView):
+    model = Listing
+    template_name='realtor/search.html'
+    context_object_name = 'items'
+
+    def get_queryset(self):
+        query = self.request.GET.get('neighborhood')
+        return Listing.objects.filter(propertyNeighborhood=query)
+
+class PropertyZipCodeSearchView(ListView):
+    model = Listing
+    template_name='realtor/search.html'
+    context_object_name = 'items'
+
+    def get_queryset(self):
+        query = self.request.GET.get('zipcode')
+        return Listing.objects.filter(propertyZipCode=query)
+
+class PropertyPriceSearchView(ListView):
+    model = Listing
+    template_name = 'realtor/search.html'
+    context_object_name = 'items'
+
+    def get_queryset(self):
+        query = self.request.GET.get('price')
+        return Listing.objects.filter(propertyPrice=query)

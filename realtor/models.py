@@ -17,9 +17,12 @@ class realtor(models.Model):
 class Listing(models.Model):
     propertyName = models.CharField(max_length=50, null=True)
     propertyDescription = models.TextField(max_length=100, null=True)
+    propertyAddress = models.CharField(max_length=50, null=True)
+    propertyType = models.CharField(max_length=50, null=True)
     propertyNeighborhood = models.CharField(max_length=50, null=True)
     propertyZipCode = models.CharField(max_length=10, null=True)
     propertyPrice = models.CharField(max_length=10, null=True)
+    propertyStatus = models.CharField(max_length=15, null=True)
     featuredProperty = models.BooleanField(default=False)
     propertyImage = models.ImageField(default='default.jpg', upload_to='listings_pics')
     #propertyImage = models.FileField()
