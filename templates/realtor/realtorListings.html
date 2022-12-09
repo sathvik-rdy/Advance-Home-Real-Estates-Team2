@@ -15,13 +15,14 @@ display: inline;}
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Featured listings </h1>
-            <div class="column">
+            <h1>Listings </h1>
+            <div class="row">
                 {% for property in listing %}
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="listing-image">
+                                <div class="row">
                                 <img src="{{ property.propertyImage.url }}" alt="property image" class="w-100" />
                             </div>
                             <span class="" style="font-size: 15px"><b>Name:</b> {{ property.propertyName }}</span><br>

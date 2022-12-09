@@ -49,7 +49,7 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
           {% if user.is_authenticated %}
           <h3>{{ user.profile.First_Name }} {{user.profile.Last_Name }}</h3>
           <img src="{{ user.profile.image.url }}" width="250" height="350"><br>
-          <span class="" style="font-size: 15px"><b>Office Address:</b> {{ user.profile.address }}</span><br>
+          <span class="" style="font-size: 15px" ><b> Office Address:</b> {{ user.profile.address }}</span><br>
           <span class="" style="font-size: 15px"><b>Call:</b> {{ user.profile.Phone_Number }}</span><br>
           <span class="" style="font-size: 15px"><b>Email:</b>{{ user.email }}</span><br>
           {% else %}
@@ -71,24 +71,24 @@ she did quite well in this role, Madison wanted to strike out on her own and obt
         <div class="container">
             <h3>Request Information</h3>
             <form action="{% url 'customer-request-submission' %}">
-            <label for="fname">First name:</label>
+            <label for="fname" >First name:</label>
             <br>
-            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value="" required="required" /><br>
             <label for="fname">Last name:</label>
             <br>
-            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value="" required="required" /><br>
             <label for="lname">Mobile:</label>
             <br>
-            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value="" required="required" /><br>
             <label for="lname">Email:</label>
             <br>
-            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value=""><br>
+            <input type="text" id="fname" name="fname" style="height:30px; width:400px;value="" required="required" /><br>
            <label for="lname">Address:</label>
             <br>
-            <input type="text" id="fname" name="fname" style="height:40px; width:400px;value=""><br>
+            <input type="text" id="fname" name="fname" style="height:40px; width:400px;value="" required="required" /><br>
             <label for="lname">Request details:</label>
             <br>
-            <input type="text" id="lname" name="lname" style="height:100px; width:400px;"value=""><br>
+            <input type="text" id="lname" name="lname" style="height:100px; width:400px;"value="" required="required" /><br>
             <br>
             <input type="submit" value="Submit">
             <p></p>
